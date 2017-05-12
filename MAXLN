@@ -1,0 +1,13 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int t=0;    cin>>t;
+    for(int i=0;i<t;i++)
+    {
+        long long r=0;    cin>>r;
+        long long ans=r*r*4;
+        cout<<"Case "<<i+1<<": "<<ans<<".25"<<endl;
+    }
+    return 0;
+}
