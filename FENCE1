@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    while(1)
+    {
+        float n=0;    cin>>n;
+        if(n==0)    break;
+        float r=0;
+        r=n/3.14159;
+        n=0;
+        n=3.14159*r*r/2;
+        printf("%.2f\n",n);
+    }
+    return 0;
+}
