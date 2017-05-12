@@ -1,0 +1,25 @@
+#include <iostream>
+#include <set>
+using namespace std;
+int main()
+{
+    int n=0;    cin>>n;
+    int a[n];
+    set<int> st;
+    set<int>::iterator it;
+    for(int p=0;p<n;p++)//for n friends
+    {
+        int f=0;
+        cin>>a[p]>>f;
+        for(int i=0;i<f;i++)//f friends of pth friend
+        {
+            int tmp=0;
+            cin>>tmp;
+            st.insert(tmp);
+        }
+    }
+    for(int i=0;i<n;i++)
+        st.erase(a[i]);
+    cout<<st.size();
+    return 0;
+}
