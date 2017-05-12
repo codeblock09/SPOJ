@@ -1,0 +1,31 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int main()
+{
+    int t=0;    cin>>t;
+    for(int i=1;i<=t;i++)
+    {
+        int s=0,n=0;    cin>>s>>n;
+        int a[n],sum=0,c=0;
+        bool flg=false;
+        for(int k=0;k<n;k++)    cin>>a[k];
+        sort(a,a+n);
+        for(int k=n-1;k>-1;k--)
+        {
+            sum+=a[k];
+            c++;
+            if(sum>=s)
+            {
+                flg=true;
+                break;
+            }
+        }
+        if(flg)
+            cout<<"Scenario #"<<i<<":"<<endl<<c<<endl;
+        else
+            cout<<"Scenario #"<<i<<":"<<endl<<"impossible"<<endl;
+        cout<<endl;
+    }
+    return 0;
+}
