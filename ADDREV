@@ -1,0 +1,25 @@
+#include<iostream>//adding reverse numbers
+using namespace std;
+int rev(int n)
+{
+    long a=n;
+    long b=0;
+    while(a)
+    {
+        b*=10;
+        b+=a%10;
+        a/=10;
+    }
+    return b;
+}
+int main()
+{
+    int t=0;
+    cin>>t;
+    while(t--)
+    {
+        int n=0,m=0;
+        cin>>n>>m;
+        cout<<rev(rev(n)+rev(m))<<endl;
+    }
+}
