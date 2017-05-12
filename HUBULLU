@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int t=0;    cin>>t;
+    while(t--)
+    {
+        int n=0,p=0;    cin>>n>>p;
+        if(p==0)
+            cout<<"Airborne wins."<<endl;
+        else
+            cout<<"Pagfloyd wins."<<endl;
+    }
+    return 0;
+}
+ 
