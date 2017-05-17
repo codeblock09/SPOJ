@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int t=0;    cin>>t;
+    while(t--)
+    {
+        int n=0,lxh=0;    cin>>n;
+        while(n--)
+        {
+            string s;   cin>>s;
+            if(s=="lxh")
+                lxh++;
+        }
+        if(lxh%2==0)
+            cout<<"hhb"<<endl;
+        else
+            cout<<"lxh"<<endl;
+    }
+    return 0;
+}
