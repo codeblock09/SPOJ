@@ -1,0 +1,33 @@
+#include<iostream>
+#include<stack>
+using namespace std;
+int main()
+{
+    int t=0;    cin>>t;
+    while(t--)
+    {
+        string str;
+        cin>>str;
+        stack<char> S;
+        int l=str.length();
+        for(int i=0;i<l;i++)
+        {
+            char c=str[i];
+            if(c=='(')
+                continue;
+            else if(c=='+'||c=='-'||c=='/'||c=='*'||c=='^')//c is operator
+            {
+                S.push(c);
+            }
+            else if(c==')')
+            {
+                cout<<S.top();
+                S.pop();
+            }
+            else //c is operand
+                cout<<c;
+        }
+        cout<<endl;
+    }
+    return 0;
+} 
