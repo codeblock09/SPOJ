@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+#include<set>
+using namespace std;
+int main()
+{
+    int n=0,k=0;    scanf("%d",&n);
+    int a[n];
+    for(int i=0;i<n;i++)    scanf("%d",&a[i]);
+    scanf("%d",&k);
+    multiset<int> s;
+    multiset<int> ::iterator itr,fwd;
+    for(int i=0;i<k;i++)
+        s.insert(a[i]);
+    itr=s.end();
+    --itr;
+    cout<<*itr;
+    for(int i=1;i<n-k+1;i++)
+    {
+        fwd=s.lower_bound(a[i-1]);
+        s.erase(fwd);
+        s.insert(a[i+k-1]);
+        itr=s.end();
+        --itr;
+        cout<<" "<<*itr;
+    }
+    return 0;
+}
