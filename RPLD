@@ -1,0 +1,24 @@
+#include<iostream>
+#include<set>
+using namespace std;
+int main()
+{
+    int t,n,r,tmp;  cin>>t;
+    for(int k=1;k<=t;k++)
+    {
+        cin>>n>>r;
+        set<pair<int,int> > s;
+        set<pair<int,int> >::iterator itr;
+        tmp=r;
+        while(r--)
+        {
+            int a,b;    cin>>a>>b;
+            s.insert(make_pair(a,b));
+        }
+        if(s.size()<tmp)
+            cout<<"Scenario #"<<k<<": impossible"<<endl;
+        else
+            cout<<"Scenario #"<<k<<": possible"<<endl;
+    }
+    return 0;
+}
