@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+#include<algorithm>
+#define si(x) scanf("%d",&x)
+using namespace std;
+int main()
+{
+    int n,sz;  si(n);
+    int a[n],b[n],c[n],d[n];
+    sz=n*n;
+    for(int i=0;i<n;i++)
+    {
+        si(a[i]);   si(b[i]);   si(c[i]);   si(d[i]);
+    }
+    vector<int> x,y;
+    vector<int>::iterator it;
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+            x.push_back(a[i]+b[j]);
+            y.push_back(c[i]+d[j]);
+        }
+    }
+    sort(y.begin(),y.end());
+    int ans=0;
+    for(int i=0;i<sz;i++)
+    {
+        int tmp=x[i];
+        tmp*=-1;
+        ans=ans+(upper_bound(y.begin(),y.end(),tmp)-lower_bound(y.begin(),y.end(),tmp));
+    }
+    printf("%d",ans);
+}
