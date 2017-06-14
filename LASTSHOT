@@ -1,0 +1,47 @@
+#include<bits/stdc++.h>
+#include<vector>
+#include<cstring>
+#define si(x) scanf("%d",&x)
+using namespace std;
+bool v[100001];
+vector<vector<int> >adj(100001);
+int ans;
+void dfs(int n)
+{
+    if(v[n])
+        return;
+    v[n]=1;
+    vector<int>::iterator itr;
+    for(itr=adj[n].begin();itr!=adj[n].end();itr++)
+    {
+        if(!v[*itr])
+            dfs(*itr);
+    }
+}
+int main()
+{
+    int n,m;
+    si(n);  si(m);
+    //for(int i=0;i<n;i++)    adj[i].clear();
+    while(m--)
+    {
+        int x,y;
+        si(x);  si(y);
+        adj[x].push_back(y);
+        //adj[y].push_back(x);
+    }
+    int c=0;
+    for(int i=1;i<=n;i++)
+    {
+        int ans=0;
+        dfs(i);
+        for(int i=1;i<=n;i++)
+            if(v[i])
+                ans++;
+        c=max(c,ans);
+        memset(v,0,sizeof(v));
+    }
+    printf("%d\n",c);
+    return 0;
+}
+
