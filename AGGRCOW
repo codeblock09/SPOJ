@@ -1,0 +1,45 @@
+#include<bits/stdc++.h>
+#include<algorithm>
+#define si(x) scanf("%d",&x)
+using namespace std;
+int n,c;
+int f(int a[],int x)
+{
+    int ct=1,cur=a[0];
+    for(int i=1;i<n;i++)
+    {
+        if(a[i]-cur>=x)
+        {
+            ct++;
+            cur=a[i];
+            if(ct==c)
+                return 1;
+        }
+    }
+    return 0;
+}
+int main()
+{
+    int t;  si(t);
+    while(t--)
+    {
+        si(n);  si(c);
+        int a[n];
+        for(int i=0;i<n;i++)    si(a[i]);
+        sort(a,a+n);
+        int low=0,high=a[n-1],mx=0;
+        while(high>low)
+        {
+            int mid=(high+low)/2;
+            if(f(a,mid)==1)
+            {
+                mx=max(mid,mx);
+                low=mid+1;
+            }
+            else
+                high=mid;
+        }
+        printf("%d\n",mx);
+    }
+    return 0;
+}
