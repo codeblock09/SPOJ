@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+#include<algorithm>
+#define ll long long int
+#define si(x) scanf("%d",&x)
+#define sl(x) scanf("%lld",&x)
+using namespace std;
+int main()
+{
+    int t;  si(t);
+    while(t--)
+    {
+        int n;  si(n);
+        int a[n];
+        for(int i=0;i<n;i++)    si(a[i]);
+        int c=0;
+        for(int i=0;i<n-1;i++)
+            if(a[i]>=a[i+1])
+                c++;
+        if(c==n-1)
+            printf("-1");
+        else
+        {
+            next_permutation(a,a+n);
+            for(int i=0;i<n;i++)    printf("%d",a[i]);
+        }
+        cout<<endl;
+    }
+    return 0;
+}
+
