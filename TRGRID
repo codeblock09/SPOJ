@@ -1,0 +1,43 @@
+#include<bits/stdc++.h>
+#define ll long long int
+#define si(x) scanf("%d",&x)
+#define sl(x) scanf("%lld",&x)
+#define MOD 10000007
+using namespace std;
+int main()
+{
+    int t,r,c;  si(t);
+    while(t--)
+    {
+        si(r);  si(c);
+        char ans;
+        if(r%2==0)
+        {
+            if(c%2==0)//ee
+            {
+                if(r<=c)    ans='L';
+                else    ans='U';
+            }
+            else//eo
+            {
+                if(r>c) ans='D';
+                else    ans='L';
+            }
+        }
+        else
+        {
+            if(c%2==0)//oe
+            {
+                if(r>c) ans='U';
+                else    ans='R';
+            }
+            else//oo
+            {
+                if(r>c) ans='D';
+                else    ans='R';
+            }
+        }
+        cout<<ans<<endl;
+    }
+    return 0;
+}
