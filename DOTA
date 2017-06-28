@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+#define si(x) scanf("%d",&x)
+using namespace std;
+int main()
+{
+    int t,n,m,d;    si(t);
+    while(t--)
+    {
+        si(n);  si(m);  si(d);
+        int a[n];
+        for(int i=0;i<n;i++)    si(a[i]);
+        int cnt=0;
+        for(int i=0;i<n;i++)
+        {
+            while(a[i]-d>0)
+            {
+                a[i]-=d;
+                cnt++;
+                if(cnt==m)
+                    break;
+            }
+            if(cnt==m)
+                break;
+        }
+        if(cnt==m)
+            printf("YES\n");
+        else
+            printf("NO\n");
+    }
+    return 0;
+}
