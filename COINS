@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+#include<map>
+#define ll long long int
+using namespace std;
+map<int,ll> mp;
+ll dp(int n)
+{
+    ll tmp=n;
+    if(n==0)    return 0;
+    if(n<=3)    return mp[n];
+    if(mp[n]!=0)    return mp[n];
+    return mp[n]=max(tmp,dp(n/2)+dp(n/3)+dp(n/4));
+}
+int main()
+{
+    int n;
+    mp[1]=1;
+    mp[2]=2;
+    mp[3]=3;
+    while(scanf("%d",&n)==1)
+        printf("%lld\n",dp(n));
+    return 0;
+}
